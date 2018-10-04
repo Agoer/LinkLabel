@@ -29,15 +29,15 @@ extension UIGestureRecognizer {
         textContainer.size = label.bounds.size
         
         let locationOfTouchInLabel = self.location(in: label)
-        let textBoundingBox = layoutManager.usedRect(for: textContainer)
-        let textContainerOffset = CGPoint(
-            x: (label.bounds.size.width - textBoundingBox.size.width) * 0.5 - textBoundingBox.origin.x,
-            y: (label.bounds.size.height - textBoundingBox.size.height) * 0.5 - textBoundingBox.origin.y)
-        let locationOfTouchInTextContainer = CGPoint(
-            x: locationOfTouchInLabel.x - textContainerOffset.x,
-            y: locationOfTouchInLabel.y - textContainerOffset.y)
+//        let textBoundingBox = layoutManager.usedRect(for: textContainer)
+//        let textContainerOffset = CGPoint(
+//            x: (label.bounds.size.width - textBoundingBox.size.width) * 0.5 - textBoundingBox.origin.x,
+//            y: (label.bounds.size.height - textBoundingBox.size.height) * 0.5 - textBoundingBox.origin.y)
+//        let locationOfTouchInTextContainer = CGPoint(
+//            x: locationOfTouchInLabel.x - textContainerOffset.x,
+//            y: locationOfTouchInLabel.y - textContainerOffset.y)
         let indexOfCharacter = layoutManager.characterIndex(
-            for: locationOfTouchInTextContainer,
+            for: locationOfTouchInLabel,
             in: textContainer,
             fractionOfDistanceBetweenInsertionPoints: nil)
         
